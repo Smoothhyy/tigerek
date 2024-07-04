@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --main-color: rgb(255, 140, 0);
+    --footer-color: rgb(42, 42, 42);
+    --progress-color: rgb(69, 68, 68);
+    --sec-font: 'Courier New', Courier, monospace;
+    --main-font: Arial, Helvetica, sans-serif;;
+}
+body{
+    overflow-x: hidden;
+    font-family: var(--sec-font);
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 7.5% 87% 5.5%;
+}
+header{
+    font-family: var(--main-font);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3.5rem;
+}
+.sec-info-header{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.info-container{
+    position: relative;
+    padding-right: 1.75rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 1.75rem;
+    align-items: center;
+}
+.info-container li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    min-height: 60px;
+}
+        
+.info-container .info-btn{
+    position: relative;
+    
+}
+    .info-container #hamburger{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 60px;
+        max-height: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .info-btn[data-tooltip]::after{
+        content: attr(data-tooltip);
+        z-index: 2;
+        position: absolute;
+        display: block;
+        bottom: -42px;
+        left: -12px;
+        padding: 5px;
+        width: 70px;
+        min-width: fit-content;
+        height: fit-content;
+        min-height: 30px;
+        border-radius: 5px;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border: 2px solid rgb(0, 0, 0);
+        font-size: .9rem;
+        text-align: center;
+    }
+.info-container li a img{
+    width: 50px;
+    height: 50px;
+}
+.info-container .info-btn:hover a{
+    border: 1px solid white;
+
+}
+.info-container #hamburger img{
+    width: 30px;
+    height: 30px;
+}
+    
+main{
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .main-container{
+    min-width: 550px;
+    max-width: 600px;
+    height: 97.5%;
+    box-shadow: 0 0 10px -3px black;
+    border-radius: 3px;
+}
+
+    .dialog{
+        position: relative;
+        background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+        border: 1px solid black;
+        border-radius: 10px;
+        position: fixed;
+        padding: 3rem 1rem;
+        align-items: center;
+        text-align: center;
+        min-width: 37.5rem;
+        max-width: 50vw;
+        min-height: 25rem;
+        max-height: 60vh;
+        margin: auto;
+        justify-content: center;
+        }
+        .dialog::backdrop{
+            background: linear-gradient(125deg, rgb(143, 108, 78), rgb(143, 108, 78));
+            opacity: .3;
+        }
+
+
+    .dialog .close-dialog{
+        border: 1px solid black;
+        border-radius: 2px;
+        color: white;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        }
+
+aside{
+    box-shadow: 0 0 24px -18px black;
+    width: 100%;
+    height: 100%;
+}
+    aside ul{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    aside ul .progress{
+        position: relative;
+        list-style: none;
+        font-weight: bold;
+        width: 15rem;
+        height: 2.5rem;
+        border: 2px solid var(--progress-color);
+        border-radius: 5px;
+        /* padding: .5rem; */
+    }
+    aside ul .progress:hover::before{
+        content: "Pokaż szczegóły questa";
+        text-shadow: .5px .5px 1px black;
+        z-index: 3;
+        position: absolute;
+        top: -50px;
+        left: 20px;
+        padding: 5px;
+        width: 100px;
+        min-width: fit-content;
+        height: fit-content;
+        min-height: 30px;
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255);
+        font-family: var(--main-font);
+        color: var(--main-color);
+        border: 2px solid var(--main-color);
+        font-size: 1rem;
+        text-align: center;
+        cursor:pointer;
+    }
+    aside ul .progress[content]::after{
+        content: attr(content);
+        position: absolute;
+        z-index: 2;
+        display: block;
+        bottom: -2.5rem;
+        left: 2rem;
+        padding: 5px;
+        width: fit-content;
+        min-width: fit-content;
+        height: fit-content;
+        min-height: 30px;
+       /*  background-color: var(--main-color); */
+        color: var(--progress-color);
+        font-size: 1rem;
+        text-align: center;
+        font-family: var(--main-font);
+        font-weight: lighter;
+        font-style: italic;
+    }
+    aside ul .progress .progress-bar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: var(--progress-color);
+        cursor: pointer;
+    }
+    aside ul .progress .progress-bar-2{
+        background: linear-gradient(90deg, rgb(53, 185, 53) 50%, #fff 50%);
+    }
+    aside ul .progress .progress-bar-3{
+        background: linear-gradient(90deg, #35b935 66%, #fff 33%);
+    }
+footer{
+    background-color: var(--footer-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chuj</title>
+    <title>Tiger Edukacja</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header id="header">
         <section class="sec-info-header">
             <ul class="info-container">
-                <li id="Papaje" title="Papaje">000</li>
+                <li id="Papaje" title="Papaje"><img src="img/papaje-icon.png" class="papaje-icon">: 000</li>
                 <li id="account" class="info-btn">
                     <a href="/account.html">
                         <img src="img/acccount.png" alt="account" class="info-header-img">
@@ -21,8 +21,15 @@
                         <img src="img/home.png" alt="home" class="info-header-img">
                     </a>
                 </li>
+                <li id="help" class="info-btn">
+                    <a href="#help">
+                        <span>
+                            &#63;
+                        </span>
+                    </a>
+                </li>
                 <li id="hamburger" class="info-btn">    
-                        <img src="img/hamburger-open.png" alt="Pokaż" title="Pokaż questy">
+                        <img src="img/hamburger-open.png" alt="Pokaż" title="Pokaż questy" id="hamburger-img">
                 </li>
             </ul>
         </section>
@@ -39,15 +46,60 @@
                     <div class="progress-bar progress-bar-3"> 2/3</div>
                 </li>
             </ul>
+            <select class="choose-class">
+                <option value="klasa1">Poziom 1</option>
+                <option value="klasa2">Poziom 2</option>
+                <option value="klasa3">Poziom 3</option>
+            </select>
     </aside>
     <main id="main">
+       <!-- SVG --> 
         <div class="main-container">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem expedita fuga illum quos quo? Alias explicabo maiores corrupti sapiente atque cupiditate mollitia sed, quasi vel enim quod quos nesciunt eligendi dolorem quaerat pariatur ut totam vero laborum velit! Nisi aliquam laboriosam quo explicabo veritatis similique quibusdam ducimus! Ipsam, tempora dicta libero architecto recusandae ab eum! Nemo minima cupiditate dicta aspernatur reiciendis ducimus! Accusamus aliquid quisquam veniam autem enim quia eum maiores odit, nisi aperiam, beatae ipsum quasi reiciendis assumenda quos recusandae, eveniet modi aspernatur dicta adipisci id? Dolore quo dicta nihil culpa doloremque ipsa, dignissimos saepe fugit quas et modi numquam nulla, doloribus aliquid odit quod illum consequuntur eius architecto? Dolore ullam voluptates architecto vitae quis reiciendis minima aspernatur consequatur.</p>
-
+             <svg height="60" width="60" xmlns="http://www.w3.org/2000/svg" class="level1" onclick="levelOne()">
+                 <ellipse rx="30" ry="20" cx="30" cy="30"
+                 style="fill:rgb(62, 119, 35);"  class="level1-el2"/>
+                 <ellipse rx="30" ry="20" cx="30" cy="20"
+                     style="fill:rgb(111, 199, 70);" class="level1-el1"/>
+    <text x="19" y="31" fill="white" font-size="40" font-weight="bolder">1</text>
+</svg>
+<svg height="60" width="60" xmlns="http://www.w3.org/2000/svg" class="level2" onclick="levelTwo()">
+    <ellipse rx="30" ry="20" cx="30" cy="30"
+        style="fill:rgb(62, 119, 35);" class="level2-el1"/>
+    <ellipse rx="30" ry="20" cx="30" cy="20"
+        style="fill:rgb(111, 199, 70);" class="level2-el2" />
+    <text x="19" y="31" fill="white" font-size="40" font-weight="bolder">2</text>
+</svg> 
+<svg height="60" width="60" xmlns="http://www.w3.org/2000/svg" class="level3" onclick="levelThree()">
+    <ellipse rx="30" ry="20" cx="30" cy="30"
+        style="fill:rgb(62, 119, 35);" class="level3-el1"/>
+    <ellipse rx="30" ry="20" cx="30" cy="20"
+        style="fill:rgb(111, 199, 70);" class="level3-el2" />
+    <text x="19" y="31" fill="white" font-size="40" font-weight="bolder">3</text>
+</svg> 
+<svg height="60" width="60" xmlns="http://www.w3.org/2000/svg" class="level4" onclick="levelFour()">
+    <ellipse rx="30" ry="20" cx="30" cy="30"
+        style="fill:rgb(62, 119, 35);" class="level4-el1"/>
+    <ellipse rx="30" ry="20" cx="30" cy="20"
+        style="fill:rgb(111, 199, 70);" class="level4-el2" />
+    <text x="19" y="31" fill="white" font-size="40" font-weight="bolder">4</text>
+</svg> 
+<svg height="60" width="60" xmlns="http://www.w3.org/2000/svg" class="level5" onclick="levelFive()">
+    <ellipse rx="30" ry="20" cx="30" cy="30"
+        style="fill:rgb(62, 119, 35);" class="level5-el1"/>
+    <ellipse rx="30" ry="20" cx="30" cy="20"
+        style="fill:rgb(111, 199, 70);" class="level5-el2" />
+    <text x="19" y="31" fill="white" font-size="40" font-weight="bolder">5</text>
+</svg> 
+<svg height="60" width="60" xmlns="http://www.w3.org/2000/svg" class="level6" onclick="levelSix()">
+    <ellipse rx="30" ry="20" cx="30" cy="30"
+        style="fill:rgb(62, 119, 35);" class="level6-el1"/>
+    <ellipse rx="30" ry="20" cx="30" cy="20"
+        style="fill:rgb(111, 199, 70);" class="level6-el2" />
+    <text x="19" y="31" fill="white" font-size="40" font-weight="bolder">6</text>
+</svg> 
         </div>
         <dialog class="dialog">
             <div class="dialog-container">
-                <img src="tiger.png">
             </div>
             <button class="close-dialog">X</button>
         </dialog>
@@ -59,100 +111,7 @@
         </p>
 
     </footer>
-
-
-    <script>
-
-/* HEADER */
-
-        const InfoBtns = document.querySelectorAll(".info-btn");
-        console.log(InfoBtns);
-
-        InfoBtns.forEach( $currentHoverItem =>{
-        $currentHoverItem.addEventListener("mouseover", () => {
-            if($currentHoverItem == InfoBtns[0]){
-                checkIfItemIsVisible("Konto", $currentHoverItem);
-            }
-            else if($currentHoverItem == InfoBtns[1]){
-                checkIfItemIsVisible("Strona główna", $currentHoverItem);
-            }
-        })
-        $currentHoverItem.addEventListener("mouseout", () => {
-            checkIfItemIsNotVisible($currentHoverItem);
-        })
-    })
-    function checkIfItemIsVisible(itemName, itemContainer){
-            itemContainer.setAttribute('data-tooltip', `${itemName}`);
-            (itemName);
-            
-    }
-    function checkIfItemIsNotVisible(itemContainer){
-            itemContainer.removeAttribute('data-tooltip');
-    }
-
-/* QUESTS */
-
-    const Quests = document.querySelectorAll(".progress");
-    Quests.forEach(
-        ($quest) => {
-            $quest.addEventListener("click", () => {
-                openDialog($quest)
-            });
-        }
-    )
-
-/* DIALOG */    
-
-const CloseDialog = document.querySelector(".close-dialog");
-const Dialog = document.querySelector(".dialog");
-const Dialog_container = document.querySelector(".dialog-container");
-
-    function openDialog ($quest){
-        let currentQuest = $quest.getAttribute("name");
-            switch (currentQuest){
-                case "quest1":
-                    Dialog.showModal();
-                    Dialog_container.innerHTML = "<h1>twoja stara quest numer 1</h1>" + "<p>kurwa jebana</p>";
-                    break;
-                case "quest2":
-                    Dialog.showModal();
-                    Dialog_container.innerHTML = "<h1>twoja stara quest numer 2</h1>" + "<p>ALL AROUND ME ARE FAMILLIAR FACES</p>"
-                    break;
-                case "quest3":
-                    Dialog.showModal();
-                    Dialog_container.innerHTML = "<h1>twoja stara quest numer 3</h1>" + "<p>WE'RE NO STRANGERS TO LOOOVE</p>"
-                    break;
-            }
-    }
-
-    CloseDialog.addEventListener("click", () =>{
-        closeDialog();
-    })
-    
-    function closeDialog(){
-        Dialog.close();
-    }
-
-/* ASIDE */
-
-    const Aside = document.querySelector("#aside");
-    const Body = document.querySelector("body");
-    const Hamburger = document.querySelector("#hamburger");
-    let hamburgerOpen = true;
-
-    Hamburger.addEventListener("click", () =>{
-        if(hamburgerOpen){
-            Aside.style.display = "none";
-            Body.style.gridTemplateColumns = "100%";
-            hamburgerOpen = false;
-        }else{
-            Aside.style.display = "flex";
-            Body.style.gridTemplateColumns = "30% 70%";
-            hamburgerOpen = true;
-        }
-    })
-
-
-    </script>
+<script src="scriptIndex.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

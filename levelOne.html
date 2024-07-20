@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiger: Poziom 1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+*{
+    --main-color: rgb(19, 167, 172);
+    --footer-color: rgb(42, 42, 42);
+    --progress-color: rgb(69, 68, 68);
+    --sec-font: 'Courier New', Courier, monospace;
+    --main-font: Arial, Helvetica, sans-serif;
+}
+main{
+    width: 100vw;
+    height: calc(100vh - 3.5rem - 39.6px);
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        .main-content{
+            width: 40rem;
+            height: 25rem;
+            border: 1px solid black;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+            .question{
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            }
+            .learning-content{
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 1rem;
+            gap: 2rem;
+            align-items: center;
+            font-size: 140%;
+            }
+            .start{
+                width: 7.5rem;
+                height: 3rem;
+                background-color: var(--main-color);
+                color: white;
+                font-size: 100%;
+                border:none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .start:hover{
+                filter: saturate(200%);
+                border: 1px solid black;
+            }
+            .q{
+                min-width: fit-content;
+                padding: .25rem;
+                width: 7.5rem;
+                height: 5rem;
+                border: 2px solid var(--main-color);
+                color: var(--main-color);
+                font-size: 150%;
+                cursor: pointer;
+                background-color: white;
+            }
+            .q:hover{
+                color: black;
+                border: 2px solid black;
+            }
+    </style>
+</head>
+<body>
+<header id="header">
+    <section class="sec-info-header">
+        <ul class="info-container">
+            <li id="Papaje" title="Papaje"><img src="img/papaje-icon.png" class="papaje-icon">000</li>
+            <li id="account" class="info-btn">
+                <a href="/account.html">
+                    <img src="img/acccount.png" alt="account" class="info-header-img">
+                </a>
+            </li>
+            <li id="home" class="info-btn">
+                <a href="/home.html">
+                    <img src="img/home.png" alt="home" class="info-header-img">
+                </a>
+            </li>
+            <li id="help" class="info-btn">
+                <a href="#help">
+                    <span>
+                        &#63;
+                    </span>
+                </a>
+            </li>
+            <li id="return" class="info-btn">
+                <a href="index.html">
+                    <span>&#8617;</span> 
+                </a>
+                
+            </li>
+        </ul>
+    </section>
+</header>
+<main>
+    <section class="main-content">
+        <div class="question">
+            <h1>Unit 1</h1>
+        </div>
+        <div class="learning-content"></div>
+    </section>
+
+</main>
+<footer id="footer">
+    <p>
+        &copy; Copywright ||
+        Tiger Edukacja  2024
+    </p>
+
+</footer>
+<script src="script.js">
+
+</script>
+<script>
+    const LearningContent = document.querySelector(".learning-content");
+    let questionsAnswered = 0;
+    let questionsAnsweredCorrectly = [];
+    let introduction = "<p>Hej! Rozwiążmy razem te zadania!</p> <button class='start'>Zaczynamy</button>"
+    let questionOne = "<p>Pytanie 1: lorem ipsum dolor sit amet </p>";
+    let questionOneAnswers = ["Jeden", "Dwa", "Trzy"];
+    let questionOneAnswersReady = "<div><button class='qO1 q'>"+ questionOneAnswers[0] +"</button> <button class='qO2 q'>"+ questionOneAnswers[1] +"</button> <button class='qO3 q'>"+ questionOneAnswers[2] +"</button> </div>"
+    let questionTwo = "Pytanie 2: lorem ipsum Dolor Sit, amet?";
+    let questionTwoAnswers = ["Tak", "Nie", "Nie wiem"];
+
+
+    if(questionsAnswered === 0){
+        LearningContent.innerHTML = introduction;
+        const StartButton = document.querySelector(".start");
+
+        StartButton.addEventListener("click", () =>{
+            LearningContent.innerHTML = questionOne + questionOneAnswersReady;
+        })
+
+    }
+</script>
+</body>
+</html>

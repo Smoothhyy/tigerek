@@ -1,14 +1,16 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
     box-sizing: border-box;
-    --main-color: rgb(255, 140, 0);
+    --main-color: rgb(19, 167, 172);
     --footer-color: rgb(42, 42, 42);
     --progress-color: rgb(69, 68, 68);
     --sec-font: 'Courier New', Courier, monospace;
-    --main-font: Arial, Helvetica, sans-serif;;
+    --main-font: Arial, Helvetica, sans-serif;
 }
 body{
+    position: relative;
     overflow-x: hidden;
     font-family: var(--sec-font);
     display: grid;
@@ -18,6 +20,7 @@ body{
     grid-template-rows: 7.5% 87% 5.5%;
 }
 header{
+    z-index: 9999;
     font-family: var(--main-font);
     grid-column-start: 1;
     grid-column-end: 3;
@@ -51,12 +54,18 @@ header{
     min-width: 60px;
     min-height: 60px;
 }
+    .info-container li .papaje-icon{
+        width: 45px;
+        height: 35px;
+        padding-right: 5px;
+    }
         
 .info-container .info-btn{
     position: relative;
     
 }
-    .info-container #hamburger{
+
+    .info-container #hamburger, .info-container #return{
         list-style: none;
         display: flex;
         justify-content: center;
@@ -88,11 +97,15 @@ header{
         font-size: .9rem;
         text-align: center;
     }
-.info-container li a img{
+.info-container li a img, .info-container #help a span, .info-container #return a span{
+    color: white;
     width: 50px;
     height: 50px;
 }
-.info-container .info-btn:hover a{
+            .info-container #return a span{
+                font-size: 250%;
+            }
+.info-container .info-btn:hover{
     border: 1px solid white;
 
 }
@@ -100,6 +113,14 @@ header{
     width: 30px;
     height: 30px;
 }
+
+.info-container #help a{
+    text-decoration: none;
+    color: white;
+    font-size: 300%;
+    font-weight: bolder;
+}
+
     
 main{
     width: 100%;
@@ -109,11 +130,15 @@ main{
     align-items: center;
 }
 main .main-container{
-    min-width: 550px;
-    max-width: 600px;
-    height: 97.5%;
+    position: relative;
+    width: 450px;
+    width: 475px;
+    height: 603px;
     box-shadow: 0 0 10px -3px black;
     border-radius: 3px;
+    background-image: url("img/Mapa1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
     .dialog{
@@ -126,22 +151,60 @@ main .main-container{
         align-items: center;
         text-align: center;
         min-width: 37.5rem;
+        width: 38rem;
         max-width: 50vw;
         min-height: 25rem;
+        height: 26rem;
         max-height: 60vh;
         margin: auto;
         justify-content: center;
         }
+        .dialog .dialog-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .dialog .dialog-container h1{
+            color: var(--main-color);
+        }
+        .dialog .dialog-container p, .dialog .dialog-container div{
+            font-size: 120%;
+            font-weight: bold;
+            margin: auto;
+            max-width: 350px;
+            /* margin: 50px 0 0 50px; */
+        }
+        .dialog .dialog-container .progress-bar-dialog{
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .dialog .dialog-container .dialog-img{
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            width: 100px;
+            height: 150px;
+        }
         .dialog::backdrop{
-            background: linear-gradient(125deg, rgb(143, 108, 78), rgb(143, 108, 78));
-            opacity: .3;
+            background: linear-gradient(125deg, rgb(0, 0, 0), rgb(0, 0, 0));
+            opacity: .15;
         }
 
 
     .dialog .close-dialog{
-        border: 1px solid black;
+
         border-radius: 2px;
-        color: white;
+        color: black;
+        background-color: white;
+        font-size: 200%;
         position: absolute;
         right: 10px;
         top: 10px;
@@ -150,12 +213,36 @@ main .main-container{
         border: none;
         cursor: pointer;
         }
+        .dialog .close-dialog:focus {
+            outline: none;
+            box-shadow: none;
+          }
+          .dialog .close-dialog:hover{
+            border: 1px solid black;
+            color: var(--main-color);
+          }
 
 aside{
+    z-index: 99;
+    position: relative;
+    background-color: white;
     box-shadow: 0 0 24px -18px black;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    width: 400px;
+    height: 100vh;
+    max-height: 100%;
 }
+    aside .choose-class{
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        top: 5rem;
+        left: 100px;
+        padding-left: 10px;
+        font-size: 150%;
+        height: 2rem;
+        width: 200px;
+    }
     aside ul{
         width: 100%;
         height: 100%;
@@ -233,6 +320,7 @@ aside{
         background: linear-gradient(90deg, #35b935 66%, #fff 33%);
     }
 footer{
+    z-index: 9999;
     background-color: var(--footer-color);
     color: white;
     display: flex;
@@ -240,4 +328,41 @@ footer{
     align-items: center;
     grid-column-start: 1;
     grid-column-end: 3;
+}
+
+
+
+svg{
+    position: absolute;
+    z-index: 0;
+}
+.level1{
+    bottom: 0rem;
+    left: 7.75rem;
+}
+    .level1:hover, .level2:hover, .level3:hover, .level4:hover, .level5:hover, .level6:hover{
+        cursor: pointer;
+        filter: saturate(300%);
+    }
+
+.level2{
+    bottom: 6.75rem;
+    left: 8.1rem;
+}
+
+.level3{
+    bottom: 15rem;
+    left: 17rem;
+}
+.level4{
+    bottom: 21rem;
+    left: 17.5rem;
+}
+.level5{
+    bottom: 27rem;
+    left: 10.25rem;
+}
+.level6{
+    bottom: 33rem;
+    left: 5.75rem;
 }

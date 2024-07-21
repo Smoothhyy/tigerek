@@ -131,8 +131,8 @@ main{
 }
 main .main-container{
     position: relative;
-    width: 450px;
     width: 475px;
+    min-width: 475px;
     height: 603px;
     box-shadow: 0 0 10px -3px black;
     border-radius: 3px;
@@ -140,6 +140,50 @@ main .main-container{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+/*     @media(max-width: 700px){
+
+    } */
+    /* @media(max-width: 600px){
+        main .main-container{
+            
+        }
+    } */
+    @media(max-width: 475px){
+        main .main-container{
+            /* height: 512.55px; */
+            width: 100%;
+            transform: scale(.9);
+            
+            
+        }
+        .info-container{
+            gap: 1.25rem;
+        }
+        .info-container li{
+            min-width: 40px;
+            min-height: 40px;
+        }
+        .info-container #hamburger, .info-container #return{
+            min-width: 60px;
+            min-height: 60px;
+        }
+    }
+    @media(max-width: 450px){
+        main .main-container{
+            transform: scale(.85);
+        }
+    }
+    @media(max-width: 400px){
+        main .main-container{
+            transform: scale(.8);
+        }
+    }
+    @media(max-width: 380px){
+        main .main-container{
+            transform: scale(.7);
+        }
+    }
 
     .dialog{
         position: relative;

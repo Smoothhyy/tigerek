@@ -246,7 +246,7 @@ main .main-container{
             width: 100vw;
             margin: 0;
         }
-        .info-container #hamburger{
+        .info-container #hamburger, .info-container #return{
             top: 5rem;
         }
     }

@@ -77,7 +77,7 @@ if(asideClosed){
     Aside.style.position = "relative";
     if(hamburgerOpen){
         hamburgerOpen = false;
-        HamburgerImg.src = "img/hamburger-open.png";
+        HamburgerImg.src = "img/hamburger.png";
         Aside.style.display = "none";
         Body.style.gridTemplateColumns = "100%";
     }else{
@@ -96,7 +96,7 @@ if(asideClosed){
         HamburgerImg.src = "img/hamburger-close.png";
     }else{
         hamburgerOpen = false;
-        HamburgerImg.src = "img/hamburger-open.png";
+        HamburgerImg.src = "img/hamburger.png";
         Aside.style.display = "flex";
         Aside.style.position = "absolute";
         Aside.style.top = "0px";
@@ -116,8 +116,8 @@ openAside();
 
 
 function levelOne(){
-location.href = "levelOne.html";
+location.href = "levels/levelOne.html";
 }
 function levelTwo(){
-location.href = "levelTwo.html";
+location.href = "levels/levelTwo.html";
 }

@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    --main-color: rgb(66, 191, 214);
+    --sec-color: rgb(246, 141, 47);
+    --footer-color: rgb(56, 56, 56);
+    --progress-color: rgb(69, 68, 68);
+    --sec-font:  "Shadows Into Light Two", cursive;
+    --main-font: "Love Ya Like A Sister", cursive;
+    --normal-font: "Verdana";
+}
+body{
+    position: relative;
+    overflow: hidden;
+    font-family: var(--main-font);
+    
+    background-color: var(--main-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cloudsUp{
+    z-index: 0;
+    position: absolute;
+    top: -5rem;
+    width: 100vw;
+    height: 20rem;
+    background-image: url("../img/clouds.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(180deg);
+}
+.cloudsDown{
+    z-index: 0;
+    height: 20rem;
+    position: absolute;
+    bottom: -5rem;
+    width: 100vw;
+    background-image: url("../img/clouds.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.bg-gradient{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+}
+
+main{
+    z-index: 2;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 20px 1px rgb(67, 67, 67);
+    border-radius: 5rem;
+    width: 90vw;
+    max-width: 40rem;
+    min-width: 10rem;
+    height: 90vh;
+    max-height: 30rem;
+    min-height: 10rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* padding-block: 5rem; */
+    padding-inline: 1rem;
+}
+main .login-info form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(1.8);
+    font-family: var(--sec-font);
+}
+main .login-info form #btn{
+    width: 5rem;
+    height: 2.5rem;
+    margin: .5rem;
+    background-color: var(--sec-color);
+    color: white;
+    font-size: 80%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 400ms ease-in-out;
+}
+main .login-info form #btn:hover{
+    color: var(--sec-color);
+    background-color: var(--footer-color);
+}
+span{
+    color: var(--sec-color);
+    font-family: var(--sec-font);
+}
+.clue{
+    color: var(--sec-color);
+    font-family: var(--main-font);
+    font-size: 60%;
+    font-style: italic;
+    margin-right: auto;
+    cursor: pointer;
+}
+.clue:hover{
+    text-decoration: underline;
+}

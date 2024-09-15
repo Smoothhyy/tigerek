@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiger: Poziom 1</title>
+    <link rel="stylesheet" href="../inc/style.css">
+    <link rel="stylesheet" href="../inc/styleLvl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cloudsUp"></div>
+    <div class="cloudsDown"></div>
+    <header id="header">
+        <section class="sec-info-header">
+            <ul class="info-container">
+                <li id="Papaje" title="Papaje"><img src="../img/papaje-icon.png" class="papaje-icon">: 000</li>
+                <li id="account" class="info-btn">
+                    <a href="/account.html">
+                        <img src="../img/account.png" alt="account" class="info-header-img">
+                    </a>
+                </li>
+                <li id="home" class="info-btn">
+                    <a href="/home.html">
+                        <img src="../img/home.png" alt="home" class="info-header-img">
+                    </a>
+                </li>
+                <li id="help" class="info-btn">
+                    <a href="#help">
+                        <img src="../img/question_mark.png" alt="help" class="info-header-img">
+                    </a>
+                </li>
+                <li id="return">
+                    <a href="../index.html" >
+                        <span >&#8617;</span> 
+                    </a>
+                    
+                </li>
+            </ul>
+        </section>
+    </header>
+<main>
+    <section class="main-content">
+        <div class="question">
+            <h1>Unit 1: Poziom 1</h1>
+        </div>
+        <div class="learning-content"></div>
+    </section>
+
+</main>
+<!-- <footer id="footer">
+    <p>
+        &copy; Copywright ||
+        Tiger Edukacja  2024
+    </p>
+
+</footer> -->
+<script src="../inc/script.js">
+
+</script>
+<script>
+    const LearningContent = document.querySelector(".learning-content");
+    let questionsAnswered = 0;
+    let questionsAnsweredCorrectly = [];
+    let tigerImage = "<img src='../img/tigerek.png' class='tiger-img dialog-img'>";
+    let introduction = "Hej! Poćwiczymy razem te zadania? <button class='start'>Zaczynamy!</button>" + tigerImage;
+    let questionOne = "Pytanie 1: lorem ipsum dolor sit amet";
+    let questionOneAnswers = ["Jeden", "Dwa", "Trzy"];
+    let questionOneAnswersReady = "<div><button class='qO1 q'>"+ questionOneAnswers[0] +"</button> <button class='qO2 q'>"+ questionOneAnswers[1] +"</button> <button class='qO3 q'>"+ questionOneAnswers[2] +"</button> </div>"
+    let questionTwo = "Pytanie 2: lorem ipsum Dolor Sit, amet?";
+    let questionTwoAnswers = ["Tak", "Nie", "Nie wiem"];
+
+
+    if(questionsAnswered === 0){
+        LearningContent.innerHTML = introduction;
+        const StartButton = document.querySelector(".start");
+
+        StartButton.addEventListener("click", () =>{
+            LearningContent.innerHTML = questionOne + questionOneAnswersReady;
+        })
+
+    }
+</script>
+</body>
+</html>
